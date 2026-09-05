@@ -1,0 +1,26 @@
+ ########################################################################################## 
+############################################################################################
+###                                                                                      ###
+##                  ###  ####  #   # ##### #   # ##### #   # ####  #####                  ##
+##                 #   # #   # #   # #     ##  #   #   #   # #   # #                      ##
+##                 ##### #   # #   # ####  # # #   #   #   # ####  ####                   ##
+##                 #   # #   #  # #  #     #  ##   #   #   # #  #  #                      ##
+##                 #   # ####    #   ##### #   #   #    ###  #   # #####                  ##
+##                                                                                        ##
+############################################################################################
+############################################################################################
+##                                                                                        ##
+##  1 - Beneath a Steel Sky    A - Myst                       I - Loom                    ##
+##  2 - Discworld 1            B - Police Quest               J - The Dig                 ##
+##  3 - Discworld 2            C - Sam & Max Hit the Road     K - Zak McKracken           ##
+##  4 - Dune 1                 D - Simon the Sorcerer 1       L - Monkey Island           ##
+##  5 - Gobliiins              E - Simon the Sorcerer 2       M - Leisure Suit Larry      ##
+##  6 - Space Quest            F - The Legend of Kyrandia     N - Vision 1                ##
+##  7 - The Black Cauldron     G - Maniac Mansion             O - Vision 2                ##
+##  8 - King's Quest           H - Maniac Mansion - Day of the Tentacle                   ##
+##  9 - Indiana Jones and the Last Crusade    P - Indiana Jones and the Fate of Atlantis  ##
+##  Q - Castle Adventure                                                                  ##
+##                                                                                        ##
+###                                                                           0 - Zurück ###
+############################################################################################
+ ##########################################################################################
