@@ -1,0 +1,20 @@
+[Unit]
+Description=FluidSynth MIDI Synth (Sound Canvas)
+After=sound.target
+Requires=sound.target
+
+[Service]
+Type=simple
+User=seraphim
+Group=audi
+ExecStart=/usr/bin/fluidsynth \
+  -a alsa \
+  -m alsa_seq \
+  -l \
+  -s \
+  /usr/share/sounds/sf2/SC-55.sf2
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,3 @@
+# insert at the end:
+//taurus/Austausch  /mnt/austausch  cifs  credentials=/root/.smbcredentials,iocharset=utf8,vers=3.0,nofail,_netdev,x-systemd.automount  0  0
+

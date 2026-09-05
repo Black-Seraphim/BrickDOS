@@ -1,0 +1,2 @@
+xrandr --output HDMI-1 --mode 1024x768 --rotate inverted
+xterm -geometry 96x25 -fa "Ac437 IBM VGA 9x16" -fs 21 -fullscreen -bg "#001100" -fg "#66ff66" -e /opt/brickdos/menu/fake_boot.sh &
