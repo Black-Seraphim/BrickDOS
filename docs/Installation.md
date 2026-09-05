@@ -357,6 +357,3 @@ The game-to-launcher mapping used by the finished system is available here:
 
 [`BrickDOS_GameMapping.csv`](BrickDOS_GameMapping.csv)
 
-For the complete project presentation, photographs and build background, visit:
-
-**https://brickdos.net**
