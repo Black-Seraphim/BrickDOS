@@ -34,9 +34,3 @@ The recorded cost of the listed purchased hardware is approximately:
 **€563**
 
 This total excludes the Logitech mouse because it was already available and assigns no additional cost to the display controller because it was included with the display.
-
-## Related Documentation
-
-- [Installation](Installation.md)
-- [Game Mapping](BrickDOS_GameMapping.csv)
-- [Project Website](https://brickdos.net)
