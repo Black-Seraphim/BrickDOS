@@ -35,9 +35,6 @@ The repository contains the complete menu structure together with a small number
 - [`menu/`](menu/) – ASCII menus and the corresponding shell scripts
 - [`examples/`](examples/) – example launch scripts for DOSBox-X and ScummVM
 - [`docs/Installation.md`](docs/Installation.md) – system setup and installation notes
-- [`docs/BrickDOS_GameMapping.csv`](docs/BrickDOS_GameMapping.csv) – mapping between game titles and launcher scripts
-- [`docs/BoM.md`](docs/BoM.md) – bill of materials for the finished system
-- [`assets/BrickDOS.png`](assets/BrickDOS.png) – BrickDOS logo
 
 ## Software stack
 
