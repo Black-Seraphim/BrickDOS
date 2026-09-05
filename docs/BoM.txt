@@ -1,0 +1,57 @@
+Übersicht
+
+Hardware
+LEGO PC: Pantasy Retro 90s PC 85005 (110 €)
+https://pantasy.com/products/pantasy-retro-90s-pc-85005
+
+SD-Card: SanDisk Extreme microSDXC UHS-I 128GB (19 €)
+https://www.sandisk.com/de-at/products/memory-cards/microsd-cards/sandisk-extreme-uhs-i-microsd?sku=SDSQXAA-128G-GN6MA
+
+Keyboard: LexonElec M88 (32€)
+https://www.amazon.de/LexonElec-Mechanische-Dual-Modus-Tastenkappen-Tablet-Twilight/dp/B0CXJF7KDJ
+
+Mouse: Logitech M-RAA93 (Kellerfund)
+
+Computer: Raspberry Pi 5 8GB (110€)
+https://www.raspberrypi.com/products/raspberry-pi-5/
+
+CPU-Fan: GeeekPi Ultra Thin ICE Tower Cooler (23€)
+https://www.amazon.de/dp/B0D6QWRBYF
+
+PC-Speaker: TWOXO Stereo Speaker (9€)
+https://www.speedlink.com/TWOXO-Stereo-Lautsprecher-schwarz/SL-810004-BK
+
+Sound-Card: MOSWAG USB to 3.5mm Audio Adapter (6€)
+https://www.amazon.de/dp/B09874Q33W
+
+Splitting Power Cable (8€)
+https://www.amazon.de/dp/B091KTC9XX
+
+Micro HDMI to HDMI Cable (8€)
+https://www.amazon.de/dp/B0CQSY2ZBC
+
+USB-A Verlängerung (3€)
+https://www.amazon.de/dp/B07TXJY8HT
+
+Power Supply 12V 5A 60W (14€)
+https://www.amazon.de/dp/B0BWNLSKNR
+
+Geekworm Raspberry Pi 5 Power Module 12V to 5V (25€)
+https://geekworm.com/products/rpi5-5v5a-pd
+
+HDMI Winkelstecker (7€)
+https://www.amazon.de/dp/B0CMTYHLCM
+
+USB-C to USB-C Cable (4€)
+https://www.amazon.de/dp/B0BSLDYN62
+
+PC Speaker Lego-Chassis (25€)
+
+Display: AUO G064XAN01.0 6.4 Inch Color TFT-LCD (160€)
+
+Display Controller: LH-VH01 V1.0 (included with display)
+
+
+
+
+Software
