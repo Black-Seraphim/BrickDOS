@@ -1,0 +1,21 @@
+/opt/
+├── brickdos/
+│   ├── dos/					#Bereich für DOS-Spiele
+│   │   ├── conf/ 				#Dosbox-Config für DOS-Spiele
+│   │   ├── games/ 				#DOS-Spiele
+│   │   └── start-pi-x/			#Start-Skripte für DOS-Spiele
+│   ├── scummvm/				#Bereich für SCUMMVM-Spiele
+│   │   ├── games/				#SCUMMVM-Spiele
+│   │   └── start-pi/			#Start-Skripte SCUMMVM-Spiele
+│   └── win/					#Bereich für Win98 bzw. Win98-Spiele
+│       ├── conf/ 				#Dosbox-Config für DOS-Spiele
+│       ├── img/ 				#Images für HDD und CD
+│       └── start-pi-x/			#Start-Skript für Win98
+└── fancontrol/					#Ordner für Lüfter-Skript - nicht erforderlich für PI4
+    └── fancontrol.py
+	
+/mnt/austausch/					#Austausch Laufwerk für die Übertragung der Daten vom PC auf den PI
+└── brickdos/
+    ├── win/
+    ├── scummvm/
+    └── dos/

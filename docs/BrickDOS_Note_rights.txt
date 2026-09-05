@@ -1,0 +1,3 @@
+sudo chown -R pi:pi /opt/brickdos
+chmod -R 755 /opt/brickdos
+

@@ -1,0 +1,2 @@
+- start Raspberry Pi Imager
+- Raspberry Pi OS (64-bit)

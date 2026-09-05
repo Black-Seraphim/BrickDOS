@@ -1,0 +1,154 @@
+## desktop von wayland nach X11
+sudo raspi-config
+# advanced options -> wayland -> X11 -> finish -> yes
+
+
+## performance mode
+sudo nano /etc/udev/rules.d/99-cpufreq-governor.rules
+sudo udevadm control --reload-rules
+sudo reboot
+# check
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor 
+
+
+## update
+# better not remote
+sudo apt update
+sudo apt upgrade -y
+
+
+## package install
+sudo apt install cifs-utils xterm dosbox-x openbox obconf scummvm fluidsynth fluid-soundfont-gm -y
+
+
+## mount shared drive
+sudo mkdir -p /mnt/austausch
+sudo chmod 755 /mnt/austausch
+sudo nano /root/.smbcredentials
+sudo chmod 600 /root/.smbcredentials
+sudo nano /etc/fstab
+sudo systemctl daemon-reload
+sudo mount -a
+# test der freigabe
+ls /mnt/austausch
+
+
+## copy data
+sudo mkdir -p /opt/brickdos/dos
+sudo mkdir -p /opt/brickdos/scummvm
+sudo chown -R seraphim:seraphim /opt/brickdos
+sudo rsync -avh --progress /mnt/austausch/brickdos/ /opt/brickdos/
+sudo chown -R seraphim:seraphim /opt/brickdos
+chmod -R 755 /opt/brickdos
+sudo mkdir -p /home/seraphim/.config/scummvm/
+sudo cp /opt/brickdos/_install/configs/scummvm.ini /home/seraphim/.config/scummvm/
+sudo cp /opt/brickdos/_install/midi/SC-55.sf2 /usr/share/sounds/sf2/
+sudo chmod 644 /usr/share/sounds/sf2/SC-55.sf2
+
+
+## switch boot-logo
+sudo cp -f /opt/brickdos/_install/graphics/brickdos.png "/usr/share/plymouth/themes/$(sudo plymouth-set-default-theme)/splash.png"
+sudo update-initramfs -u
+
+
+## install midi
+# service für synth anlegen
+sudo nano /etc/systemd/system/fluidsynth.service
+sudo systemctl daemon-reload
+sudo systemctl enable fluidsynth
+sudo systemctl start fluidsynth
+sudo reboot
+# midi-geräte anzeigen um den richtigen Pot für die Dosbox zu identifizieren
+aplaymidi -l
+
+
+## install font
+mkdir -p ~/.local/share/fonts
+cp /opt/brickdos/_install/fonts/Ac437_IBM_VGA_9x16.ttf ~/.local/share/fonts/
+fc-cache -fv ~/.local/share/fonts
+
+
+## set resolution
+sudo nano /boot/firmware/cmdline.txt
+sudo nano /etc/X11/xorg.conf.d/10-monitor.conf
+
+
+## setup openbox
+sudo nano /etc/lightdm/lightdm.conf
+sudo nano ~/.config/openbox/autostart
+
+## neustart
+sudo reboot
+
+
+
+
+### ~/.config/openbox/autostart
+xrandr --output HDMI-1 --mode 1024x768 --rotate inverted
+xterm -geometry 96x25 -fa "Ac437 IBM VGA 9x16" -fs 21 -fullscreen -bg "#001100" -fg "#66ff66" -e /opt/brickdos/menu/fake_boot.sh &
+
+
+### /etc/lightdm/lightdm.conf
+[Seat:*]
+autologin-user=seraphim
+autologin-session=openbox
+
+
+### /etc/X11/xorg.conf.d/10-monitor.conf
+Section "Monitor"
+    Identifier "HDMI-1"
+    Modeline "1024x768_60.00" 65.00 1024 1048 1184 1344 768 771 777 806 -hsync -vsync
+    Option "PreferredMode" "1024x768_60.00"
+EndSection
+
+Section "Screen"
+    Identifier "Screen0"
+    Monitor "HDMI-1"
+    DefaultDepth 24
+    SubSection "Display"
+        Depth 24
+        Modes "1024x768_60.00"
+    EndSubSection
+EndSection
+
+
+### /boot/firmware/cmdline.txt
+# am Ende der Zeile hinten anhängen
+video=HDMI-A-1:1024x768@60
+
+
+### fluidsynth.service
+[Unit]
+Description=FluidSynth MIDI Synth (Sound Canvas)
+After=sound.target
+Requires=sound.target
+
+[Service]
+Type=simple
+User=seraphim
+Group=audi
+ExecStart=/usr/bin/fluidsynth \
+  -a alsa \
+  -m alsa_seq \
+  -l \
+  -s \
+  /usr/share/sounds/sf2/SC-55.sf2
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
+
+
+### /etc/fstab
+# untern einfügen:
+//taurus/Austausch  /mnt/austausch  cifs  credentials=/root/.smbcredentials,iocharset=utf8,vers=3.0,nofail,_netdev,x-systemd.automount  0  0
+
+
+### /root/.smbcredentials
+username=DEIN_SAMBA_USER
+password=DEIN_SAMBA_PASSWORT
+
+
+### /etc/udev/rules.d/99-cpufreq-governor.rules
+SUBSYSTEM=="cpu", ACTION=="add", TEST=="cpufreq/scaling_governor", ATTR{cpufreq/scaling_governor}="performance"
