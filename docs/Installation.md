@@ -84,9 +84,31 @@ The runtime installation is located below:
 /opt/brickdos/
 ```
 
-The directory layout is documented separately:
+The runtime directory structure used by BrickDOS is:
 
-[`FolderStructure.md`](FolderStructure.md)
+```text
+/opt/
+├── brickdos/
+│   ├── dos/                    # DOS games
+│   │   ├── conf/               # DOSBox-X configuration files
+│   │   ├── games/              # DOS game data
+│   │   └── start-pi-x/         # DOS launcher scripts
+│   ├── scummvm/                # ScummVM games
+│   │   ├── games/              # ScummVM game data
+│   │   └── start-pi/           # ScummVM launcher scripts
+│   └── win/                    # Windows 98 / Windows 98 games
+│       ├── conf/               # DOSBox-X configuration files
+│       ├── img/                # HDD and CD images
+│       └── start-pi-x/         # Windows 98 launcher script
+└── fancontrol/                 # Fan control script; not required for Raspberry Pi 4
+    └── fancontrol.py
+
+/mnt/austausch/                 # Optional transfer share
+└── brickdos/
+    ├── win/
+    ├── scummvm/
+    └── dos/
+```
 
 Create the required directories and copy the repository data or your prepared BrickDOS files into `/opt/brickdos/`.
 
@@ -167,15 +189,13 @@ After copying, restore the correct ownership and permissions for the BrickDOS us
 
 BrickDOS uses a prepared ScummVM configuration.
 
-Repository reference:
-
-[`config/scummvm/scummvm.ini`](../config/scummvm/scummvm.ini)
-
-Install it in the configuration directory of the user that runs BrickDOS:
+The configuration file is stored for the user running BrickDOS at:
 
 ```text
 ~/.config/scummvm/scummvm.ini
 ```
+
+It contains the local ScummVM settings and game definitions required by the finished system. Because these entries depend on the installed games and local paths, the file is not part of the repository.
 
 Game data itself is not included in the repository.
 
@@ -335,15 +355,7 @@ These examples document the launch chain without distributing game data.
 
 The game-to-launcher mapping used by the finished system is available here:
 
-[`GameMapping.csv`](GameMapping.csv)
-
-## Notes
-
-This installation guide reflects the configuration of the finished BrickDOS build. It is primarily a technical reference for reproducing or adapting the setup.
-
-Hardware details are documented separately in:
-
-[`BoM.md`](BoM.md)
+[`BrickDOS_GameMapping.csv`](BrickDOS_GameMapping.csv)
 
 For the complete project presentation, photographs and build background, visit:
 
